@@ -1,26 +1,26 @@
-package nextg.bookstore.domain;
+package nextg.bookstore.domain.dto;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "authors")
-public class Author {
+public class AuthorDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String fullName;
 
     private Integer yearOfBirth;
 
-    @ManyToMany
-    @JoinTable
-    private Set<Book> books = new HashSet<>();
+    private Set<String> booksNames = new HashSet<>();
 
-    public Author() {}
+    public AuthorDto() {}
+
+    public AuthorDto(Long id, String fullName, Integer yearOfBirth, Set<String> booksNames) {
+        this.id = id;
+        this.fullName = fullName;
+        this.yearOfBirth = yearOfBirth;
+        this.booksNames = booksNames;
+    }
 
     public Long getId() {
         return id;
@@ -46,11 +46,11 @@ public class Author {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public Set<Book> getBooks() {
-        return books;
+    public Set<String> getBooksNames() {
+        return booksNames;
     }
 
-    public void setBooks(Set<Book> books) {
-        this.books = books;
+    public void setBooksNames(Set<String> booksNames) {
+        this.booksNames = booksNames;
     }
 }
