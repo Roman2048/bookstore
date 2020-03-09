@@ -23,7 +23,7 @@ public class Order {
 
     private LocalDate completionDate;
 
-    private Boolean isCompleted;
+    private Boolean completed;
 
     public Order() {}
 
@@ -68,10 +68,10 @@ public class Order {
     }
 
     public Boolean getCompleted() {
-        return isCompleted;
+        return completed;
     }
 
     public void setCompleted(Boolean completed) {
-        isCompleted = completed;
+        this.completed = completed;
     }
 }

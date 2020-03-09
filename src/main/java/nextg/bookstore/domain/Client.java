@@ -15,8 +15,7 @@ public class Client {
 
     private String phone;
 
-    @OneToMany
-    @JoinTable
+    @OneToMany(mappedBy = "client")
     private Set<Order> orders;
 
     public Client() {}
