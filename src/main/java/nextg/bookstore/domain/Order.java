@@ -2,6 +2,7 @@ package nextg.bookstore.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,7 +18,7 @@ public class Order {
 
     @ManyToMany
     @JoinTable
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     private LocalDate creationDate;
 
