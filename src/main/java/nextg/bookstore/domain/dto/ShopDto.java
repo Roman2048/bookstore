@@ -1,7 +1,7 @@
 package nextg.bookstore.domain.dto;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShopDto {
 
@@ -9,11 +9,11 @@ public class ShopDto {
 
     private String address;
 
-    private Set<String> books = new HashSet<>();
+    private List<String> books = new ArrayList<>();
 
     public ShopDto() {}
 
-    public ShopDto(Long id, String address, Set<String> books) {
+    public ShopDto(Long id, String address, List<String> books) {
         this.id = id;
         this.address = address;
         this.books = books;
@@ -35,11 +35,11 @@ public class ShopDto {
         this.address = address;
     }
 
-    public Set<String> getBooks() {
+    public List<String>getBooks() {
         return books;
     }
 
-    public void setBooks(Set<String> books) {
+    public void setBooks(List<String> books) {
         this.books = books;
     }
 }

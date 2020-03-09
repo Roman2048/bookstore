@@ -58,7 +58,6 @@ public class ShopService {
         return new ShopDto(
                 s.getId(),
                 s.getAddress(),
-                s.getBooks().stream().map(Book::getTitle).collect(Collectors.toSet())
-        );
+                s.getBooks().stream().map(Book::getTitle).collect(Collectors.toList()));
     }
 }

@@ -1,8 +1,8 @@
 package nextg.bookstore.domain;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "shops")
@@ -16,7 +16,7 @@ public class Shop {
 
     @ManyToMany
     @JoinTable
-    private Set<Book> books = new HashSet<>();
+    private List<Book> books = new ArrayList<>();
 
     public Shop() {}
 
@@ -36,11 +36,11 @@ public class Shop {
         this.address = address;
     }
 
-    public Set<Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(Set<Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
 }
